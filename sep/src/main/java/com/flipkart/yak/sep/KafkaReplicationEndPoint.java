@@ -307,15 +307,15 @@ public class KafkaReplicationEndPoint extends BaseReplicationEndpoint {
 
     }
 
-    public static void main(String[] args) {
-        
-        ProducerRecord<byte[], byte[]> record = new ProducerRecord<>(
-                "test", " 1-OD109625871071720000".getBytes(), "test".getBytes());
-        System.out.println("publishing to kafka keySr "
-                +new String(record.key())
-                +" "+( Utils.abs(Utils.murmur2(record.key())) % 16));
-    	
-    	
-    		
-    }
+//    public static void main(String[] args) {
+//
+//        ProducerRecord<byte[], byte[]> record = new ProducerRecord<>(
+//                "test", " 1-OD109625871071720000".getBytes(), "test".getBytes());
+//        System.out.println("publishing to kafka keySr "
+//                +new String(record.key())
+//                +" "+( Utils.abs(Utils.murmur2(record.key())) % 16));
+//
+//
+//
+//    }
 }

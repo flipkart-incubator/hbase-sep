@@ -1,0 +1,23 @@
+{
+  "cfConfig": {
+    "default: {
+      "kafkaConfig": {
+        "bootstrap.servers": "localhost:9003",
+        "acks": "all",
+        "retries": "0",
+        "batch.size": "1000",
+        "linger.ms": "10",
+        "key.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer",
+        "value.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer"
+      },
+      "whiteListedQualifier": [
+        "data",
+        "events"
+      ],
+      "qualifierToTopicNameMap": {
+        "data": "yak_export",
+        "events": "yak_export"
+      }
+    }
+  }
+}
