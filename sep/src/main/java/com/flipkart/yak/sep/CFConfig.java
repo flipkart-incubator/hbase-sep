@@ -15,7 +15,8 @@ public class CFConfig {
 	private Map<String,Object> kafkaConfig; 
 	private Set<String> whiteListedQualifier = new HashSet<>();
 	private Map<String,String> qualifierToTopicNameMap = new HashMap<>();
-	
+	private String defaultTopicName;
+
 
 	public Map<String, Object> getKafkaConfig() {
 		return kafkaConfig;
@@ -36,5 +37,8 @@ public class CFConfig {
 	public void setQualifierToTopicNameMap(Map<String, String> qualifierToTopicNameMap) {
 		this.qualifierToTopicNameMap = qualifierToTopicNameMap;
 	}
-	
+
+    public String getDefaultTopicName() {
+        return defaultTopicName;
+    }
 }
