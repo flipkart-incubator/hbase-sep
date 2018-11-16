@@ -20,6 +20,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.Cell;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -147,6 +148,11 @@ public class KafkaReplicationEndPoint extends BaseReplicationEndpoint {
 
                         String topic = new StringBuilder().append(topicPrefix).append("_").append(columnFamily)
                                 .append("_").append(qualifier).toString().toLowerCase();
+
+                        if (StringUtils.isNotBlank(cfConf.getDefaultTopicName())) {
+                            topic = cfConf.getDefaultTopicName();
+                            logger.debug("Changing topicName for column family {} to {}", columnFamily, topic);
+                        }
 
                         if (cfConf.getQualifierToTopicNameMap().containsKey(qualifier)) {
                             // override topicName as per config
