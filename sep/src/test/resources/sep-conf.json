@@ -1,55 +1,42 @@
 {
-  "cfConfig" : {
-    
-      
-      "default" :{
-        "kafkaConfig": {
-          
-  
-    
-    "bootstrap.servers": "prod-oms-kafka1:9092,prod-oms-kafka2:9092,prod-oms-kafka3:9092,prod-oms-kafka4:9092,prod-oms-kafka5:9092,prod-oms-kafka6:9092,prod-oms-kafka7:9092,prod-oms-kafka8:9092,prod-oms-kafka9:9092,prod-oms-kafka10:9092"
-  
-    ,
-    "acks": "all"
-  
-    ,
-    "retries": "0"
-  
-    ,
-    "batch.size": "1000"
-  
-    ,
-    "linger.ms": "10"
-  
-    ,
-    "key.serializer": "sep.shade.org.apache.kafka.common.serialization.ByteArraySerializer"
-  
-    ,
-    "value.serializer": "sep.shade.org.apache.kafka.common.serialization.ByteArraySerializer"
-  
-
-        },
-        "whiteListedQualifier":[
-          
-  
-     "data"
-  
-    , "events"
-  
-
-        ],
-        "qualifierToTopicNameMap": {
-          
-  
-    
-    "data": "yak_export"
-  
-    ,
-    "events": "yak_export"
-  
-
-        }
+  "cfConfig": {
+    "default": {
+      "kafkaConfig": {
+        "bootstrap.servers": "localhost:9003",
+        "acks": "all",
+        "retries": "0",
+        "batch.size": "1000",
+        "linger.ms": "10",
+        "key.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer",
+        "value.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer"
+      },
+      "whiteListedQualifier": [
+        "data",
+        "events"
+      ],
+      "qualifierToTopicNameMap": {
+        "data": "yak_export",
+        "events": "yak_export"
       }
-    
+    },
+    "cf": {
+      "kafkaConfig": {
+        "bootstrap.servers": "localhost:9003",
+        "acks": "all",
+        "retries": "0",
+        "batch.size": "1000",
+        "linger.ms": "10",
+        "key.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer",
+        "value.serializer": "org.apache.kafka.common.serialization.ByteArraySerializer"
+      },
+      "whiteListedQualifier": [
+        "data",
+        "events"
+      ],
+      "qualifierToTopicNameMap": {
+        "data": "yak_export",
+        "events": "yak_export"
+      }
+    }
   }
 }
